@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+/* Blue background */
+.page-bg {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #2f6cff, #1e3c72);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* White card */
+.card {
+    background: #ffffff;
+    width: 700px;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+/* Title */
+.card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Search bar */
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.search-box button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    background: #2f6cff;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background: #1e4fe0;
+}
+
+/* Add link */
+.add-link {
+    margin-bottom: 10px;
+}
+
+.add-link a {
+    text-decoration: none;
+    color: #2f6cff;
+    font-weight: 500;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+tr:hover {
+    background: #f7f9ff;
+}
+
+/* Actions */
+.action a {
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.edit {
+    color: #2f6cff;
+}
+
+.delete {
+    color: #e74c3c;
+}
+
+/* No data */
+.no-data {
+    text-align: center;
+    color: #999;
+}
