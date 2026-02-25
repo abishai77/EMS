@@ -7,7 +7,7 @@ import java.util.List;
 
 public class EmployeeDAO {
 
-                   /* ================= ADD EMPLOYEE ================= */
+                 
     public boolean AddEmployee(Employee emp) {
         boolean status = false;
         String sql = "INSERT INTO employee(name,email,department,salary,phone) VALUES (?,?,?,?,?)";
@@ -30,7 +30,7 @@ public class EmployeeDAO {
         return status;
     }
 
-             /* ================= VIEW ALL EMPLOYEES ================= */
+         
     public List<Employee> getAllEmployee() {
         List<Employee> list = new ArrayList<>();
         String sql = "SELECT * FROM employee";
@@ -56,7 +56,7 @@ public class EmployeeDAO {
         return list;
     }
 
-                     /* ================= VIEW BY ID ================= */
+               
     public Employee getEmployeeById(int id) {
         Employee emp = null;
         String sql = "SELECT * FROM employee WHERE id=?";
@@ -83,7 +83,7 @@ public class EmployeeDAO {
         return emp;
     }
 
-                    /* ================= VIEW BY NAME ================= */
+                   
     public List<Employee> getEmployeesByName(String name) {
         List<Employee> list = new ArrayList<>();
         String sql = "SELECT * FROM employee WHERE name LIKE ?";
@@ -111,7 +111,7 @@ public class EmployeeDAO {
         return list;
     }
 
-                  /* ================= UPDATE EMPLOYEE ================= */
+                
     public boolean updateEmployee(Employee emp) {
         boolean status = false;
         String sql = "UPDATE employee SET name=?, email=?, department=?, salary=?, phone=? WHERE id=?";
@@ -134,7 +134,7 @@ public class EmployeeDAO {
         return status;
     }
 
-                /* ================= DELETE EMPLOYEE ================= */
+             
     public boolean deleteEmployee(int id) {
         boolean status = false;
         String sql = "DELETE FROM employee WHERE id=?";
@@ -150,6 +150,7 @@ public class EmployeeDAO {
         }
         return status;
     }
+
 
 
 }
