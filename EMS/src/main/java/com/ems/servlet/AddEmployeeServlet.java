@@ -12,6 +12,20 @@ public class AddEmployeeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+        HttpSession session = req.getSession(false);
+
+        if(session == null){
+            resp.sendRedirect("login.jsp");
+            return;
+        }
+
+        String role = (String) session.getAttribute("role");
+
+        if(role == null || !role.equals("admin")){
+            resp.sendRedirect("error.jsp");
+            return;
+        }
+
 
         System.out.println("== doPost called ==");
 

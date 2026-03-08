@@ -11,6 +11,19 @@ public class EditEmployeeServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession(false);
+
+        if(session == null){
+            response.sendRedirect("login.jsp");
+            return;
+        }
+
+        String role = (String) session.getAttribute("role");
+
+        if(role == null || !role.equals("admin")){
+            response.sendRedirect("error.jsp");
+            return;
+        }
 
         int id = Integer.parseInt(request.getParameter("id"));
 
