@@ -22,9 +22,19 @@
         </form>
 
         <!-- Add employee -->
-        <div class="add-link">
-            <a href="AddEmployee.jsp">+ Add Employee</a>
-        </div>
+        <td class="action">
+                <%
+                String role = (String) session.getAttribute("role");
+                if("admin".equals(role)){
+                %>
+
+            <div class="add-link">
+                <a href="AddEmployee.jsp">+ Add Employee</a>
+            </div>
+
+                <%
+}
+%>
 
         <!-- Table -->
         <table>
@@ -57,9 +67,16 @@
                     <td><%= e.getPhone() %></td>
 
                     <td class="action">
+                        <%
+                            role = (String) session.getAttribute("role");
+                            if(role !=null && role.equals("admin")){
+                        %>
                         <a class="edit" href="EditEmployee?id=<%= e.getId() %>">Edit</a>
                         <a class="delete" href="DeleteEmployee?id=<%= e.getId() %>"
                            onclick="return confirm('Delete this employee?')">Delete</a>
+                        <%
+                            }
+                        %>
                     </td>
                 </tr>
             <%

@@ -1,3 +1,11 @@
+<%
+    String role = (String) session.getAttribute("role");
+
+    if(role == null || !role.equals("admin")){
+        response.sendRedirect("error.jsp");
+        return;
+    }
+%>
 <!DOCTYPE html>
 <html>
 <head>
