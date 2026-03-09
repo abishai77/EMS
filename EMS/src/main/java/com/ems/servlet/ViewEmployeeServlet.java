@@ -22,11 +22,10 @@ public class ViewEmployeeServlet extends HttpServlet {
         EmployeeDAO dao = new EmployeeDAO();
         List<Employee> employees;
 
-        // ✅ CASE 1: NO keyword → FETCH ALL EMPLOYEES
         if (keyword == null || keyword.trim().isEmpty()) {
             employees = dao.getAllEmployee();
         }
-        // ✅ CASE 2: keyword present → ID or NAME search
+        
         else {
             try {
                 int id = Integer.parseInt(keyword);
@@ -44,4 +43,5 @@ public class ViewEmployeeServlet extends HttpServlet {
         request.getRequestDispatcher("ViewEmployee.jsp")
                 .forward(request, response);
     }
+
 }
